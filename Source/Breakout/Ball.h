@@ -15,14 +15,22 @@ public:
 	// Sets default values for this actor's properties
 	ABall();
 
+	UPROPERTY(VisibleAnywhere, Category = "Actor Visual")
+		class UPaperSpriteComponent* Sprite;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	float elapsedTime;
 
+	const int maxBrickScore = 1000;
+	const int minBrickScore = 200;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	int CalculateBrickScore();
 
 };
