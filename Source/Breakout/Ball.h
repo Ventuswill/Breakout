@@ -18,6 +18,9 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Actor Visual")
 		class UPaperSpriteComponent* Sprite;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Visual")
+		class USphereComponent* BallCollision;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

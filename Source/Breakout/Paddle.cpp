@@ -3,7 +3,8 @@
 
 #include "Paddle.h"
 #include "PaperSpriteComponent.h"
-#include "SimplePawnMovementComponent.h"
+#include "GameFramework/PawnMovementComponent.h"
+#include "Misc/App.h"
 
 // Sets default values
 APaddle::APaddle() : m_movement(0)
@@ -19,7 +20,7 @@ APaddle::APaddle() : m_movement(0)
 
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
-	PaddleMovementComponent = CreateDefaultSubobject<USimplePawnMovementComponent>(TEXT("CustomMovementComponent"));
+	PaddleMovementComponent = CreateDefaultSubobject<UPawnMovementComponent>(TEXT("MovementComponent"));
 	//Set the SimplePawnMovementComponent's UpdateComponent to the RootComponent. This will apply the movement to the RootComponent
 	PaddleMovementComponent->UpdatedComponent = RootComponent;
 
@@ -38,7 +39,8 @@ void APaddle::MoveHorizontal(float AxisValue)
 	if (PaddleMovementComponent && (PaddleMovementComponent->UpdatedComponent == RootComponent))
 	{
 		//Move the Pawn using the SimplePawnMovementComponent on the Forward Vector
-		PaddleMovementComponent->AddInputVector(GetActorForwardVector() * - m_movement * 1000 * DeltaTime);
+		PaddleMovementComponent->AddInputVector(GetActorForwardVector() * - m_movement * 1000);  //TODO: Delta
+
 
 	}
 

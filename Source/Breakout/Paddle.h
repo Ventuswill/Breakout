@@ -22,7 +22,7 @@ public:
 		class UPaperSpriteComponent* PaddleSpriteComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pawn Movement")
-		class USimplePawnMovementComponent* PaddleMovementComponent;
+		class UPawnMovementComponent* PaddleMovementComponent;
 
 protected:
 	// Called when the game starts or when spawned
