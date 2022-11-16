@@ -3,6 +3,8 @@
 
 #include "Brick.h"
 #include "Components/BoxComponent.h"
+#include "PaperSpriteComponent.h"
+#include "Math/UnrealMathUtility.h"
 
 // Sets default values
 ABrick::ABrick()
@@ -17,6 +19,39 @@ ABrick::ABrick()
 	BrickCollision->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 	RootComponent = BrickCollision;
+
+	BrickSprite = CreateDefaultSubobject<UPaperSpriteComponent>("BrickSprite");
+	BrickBlue = CreateDefaultSubobject<UPaperSpriteComponent>("BrickBlue");
+	BrickBrown = CreateDefaultSubobject<UPaperSpriteComponent>("BrickBrown");
+	BrickGreen = CreateDefaultSubobject<UPaperSpriteComponent>("BrickGreen");
+	BrickPurple = CreateDefaultSubobject<UPaperSpriteComponent>("BrickPurple");
+	BrickRed = CreateDefaultSubobject<UPaperSpriteComponent>("BrickRed");
+	BrickYellow = CreateDefaultSubobject<UPaperSpriteComponent>("BrickYellow");
+
+	int32 rand = FMath::RandRange(1, 6);
+
+	switch (rand)
+	{
+	case 1:
+		BrickSprite = BrickBlue;
+		break;
+	case 2:
+		BrickSprite = BrickBrown;
+		break;
+	case 3:
+		BrickSprite = BrickGreen;
+		break;
+	case 4:
+		BrickSprite = BrickPurple;
+		break;
+	case 5:
+		BrickSprite = BrickRed;
+		break;
+	case 6:
+		BrickSprite = BrickYellow;
+		break;
+
+	}
 
 }
 

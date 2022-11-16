@@ -15,6 +15,27 @@ public:
 	// Sets default values for this actor's properties
 	ABrick();
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickSprite;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickBlue;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickBrown;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickGreen;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickPurple;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sprite", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickRed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Config", meta = (AllowPrivateAccess = "true"))
+		class UPaperSpriteComponent* BrickYellow;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -20,10 +20,14 @@ APaddle::APaddle() : m_movement(0)
 
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationRoll = false;
+	bUseControllerRotationYaw = true;
+
 	PaddleMovementComponent = CreateDefaultSubobject<UPawnMovementComponent>(TEXT("MovementComponent"));
 	//Set the SimplePawnMovementComponent's UpdateComponent to the RootComponent. This will apply the movement to the RootComponent
-	PaddleMovementComponent->UpdatedComponent = RootComponent;
-
+	/*PaddleMovementComponent->UpdatedComponent = RootComponent;
+	 fix this???*/
 }
 
 // Called when the game starts or when spawned
